@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="student" class="com.xuuxxi.pojo.Student">
+        <!--普通注入-->
+        <property name="name" value="zhang"/>
+        <!--Bean注入-->
+        <property name="address" ref="address"/>
+        <!--数组注入-->
+        <property name="books">
+            <array>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+                <value>d</value>
+            </array>
+        </property>
+        <!--list注入-->
+        <property name="hobbies">
+            <list>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+                <value>d</value>
+            </list>
+        </property>
+        <!--map-->
+        <property name="cards">
+            <map>
+                <entry key="a" value="1"/>
+                <entry key="b" value="2"/>
+                <entry key="c" value="3"/>
+                <entry key="d" value="4"/>
+            </map>
+        </property>
+        <!--set-->
+        <property name="games">
+            <set>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+                <value>d</value>
+            </set>
+        </property>
+        <!--null && empty-->
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+        <!--empty-->
+        <!--<property name="wife" value=""/>-->
+        <property name="info">
+            <props>
+                <prop key="a">1</prop>
+                <prop key="b">2</prop>
+                <prop key="c">3</prop>
+                <prop key="d">4</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="address" class="com.xuuxxi.pojo.Address"/>
+</beans>

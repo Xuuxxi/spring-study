@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Hello" class="com.xuuxxi.pojo.Hello">
+        <property name="str" value="Spring"/>
+    </bean>
+
+    <!--第一种，下标赋值-->
+    <!--需要对应的构造函数-->
+    <bean id="t1" class="com.xuuxxi.pojo.People">
+        <constructor-arg index="0" value="1"/>
+        <constructor-arg index="1" value="tom"/>
+        <constructor-arg index="2" value="123"/>
+    </bean>
+
+    <!--第二种，类型赋值-->
+    <!--不建议使用-->
+    <bean id="t2" class="com.xuuxxi.pojo.People">
+        <constructor-arg type="java.lang.Long" value="2"/>
+        <constructor-arg type="java.lang.String" value="jack"/>
+        <constructor-arg type="java.lang.String" value="123"/>
+    </bean>
+
+    <!--第三种，通过name赋值-->
+    <bean id="t3" class="com.xuuxxi.pojo.People">
+        <constructor-arg name="id" value="3"/>
+        <constructor-arg name="name" value="Can"/>
+        <constructor-arg name="password" value="123"/>
+    </bean>
+
+    <alias name="t1" alias="tom"/>
+</beans>
